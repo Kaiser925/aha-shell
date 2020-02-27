@@ -1,12 +1,9 @@
 #!/bin/bash
 
+if [[ $(uname -m | grep '64') ]]; then 
+  ARCH=amd64
+else
+  ARCH=386
+fi
 
-# base::get_arch_bits() return '64' if system is 64 bits,
-# else return 32.
-function base::get_arch_bits() {
-  if [[ $(uname -m | grep '64') ]]; then 
-    return 64
-  else
-    return 36
-  fi
-}
+OS=$(uname | awk '{print tolower($0)}')
