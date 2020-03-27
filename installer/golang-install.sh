@@ -3,7 +3,6 @@
 # Golang-install will install go with version.
 # If you are upgrading from an older version of Go 
 # this will first remove the existing version.
-local _os _arch
 
 if [[ $(uname -m | grep '64') ]]; then 
   _arch=amd64
@@ -29,8 +28,6 @@ function install() {
 
   _url=https://dl.google.com/go/$_pkg
 
-  
-
   if check_cmd curl; then
     curl $_url --output $_pkg
   elif check_cmd wget; then
@@ -46,11 +43,19 @@ function install() {
 }
 
 function uninstall() {
-  local _preversion
-  if [ -d '/usr/local/go' ]; then
-    _preversion=$(go version)    
-    echo "Remove the $_preversion"
-    sudo rm -rf /usr/local/go
+  local _preversion _path
+  if ! check_cmd go; then
+    echo 'There is no golang.'
+    return 1
+  fi
+
+  _path=$(which go | awk 'BEGIN{FS="/bin/go"} END{print $1}')
+  
+  sudo rm -rf $_path
+
+  if [ $_os == "linux" ]; then
+    sed -i '/local\/go\/bin/d' $HOME/.profile
+  else
     sed -i '' -e '/local\/go\/bin/d' $HOME/.profile
   fi
 }
@@ -63,14 +68,14 @@ function main() {
   fi
 
   echo " Golang installer, what do you want to do.
-  1. install/upgrade golang.
+  1. install/modify golang.
   2. uninstall golang."
 
   read -p "Input action number: " _action
 
   case "$_action" in
   "1") 
-    echo "Install/Upgrade"
+    echo "Install/Modify Version"
     install ;;
   "2") 
     echo "Uninstall"
