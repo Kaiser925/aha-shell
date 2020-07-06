@@ -1,0 +1,25 @@
+version: "3"
+services:
+  mysql:
+    image: mysql:latest
+    container_name: mysql
+    restart: always
+    ports:
+      - "6606:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+    volumes:
+      - "$HOME/data/mysql/db:/var/lib/mysql"
+      - "$HOME/data/mysql/conf:/etc/mysql/conf.d"
+  redis:
+    image: redis:latest
+    container_name: redis
+    command: redis-server --requirepass root
+    ports:
+      - "6379:6379"
+    volumes:
+      - "$HOME/data/redis:/data"
+
+networks:
+  dev:
+    driver: bridge
