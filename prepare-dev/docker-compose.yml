@@ -14,12 +14,8 @@ services:
   redis:
     image: redis:latest
     container_name: redis
-    command: redis-server --requirepass root
+    restart: always
     ports:
       - "6379:6379"
     volumes:
       - "$HOME/data/redis:/data"
-
-networks:
-  dev:
-    driver: bridge
