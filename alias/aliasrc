@@ -1,0 +1,49 @@
+# alias  for kubectl
+
+# Basic commands
+alias k8screate="kubectl create" 
+alias k8sexpose="kubectl expose"
+
+# Service
+alias k8srun="kubectl run"
+alias k8sset="kubectl set"
+
+# Basic commands (Intermediate)
+alias k8sexplain="kubectl explain"
+alias k8sget="kubectl get"
+alias k8sedit="kubectl edit"
+alias k8sdel="kubectl delete"
+
+# Depoly commands
+alias k8srollout="kubectl rollout"
+alias k8sscale="kubectl scale"
+alias k8sautoscale="kubectl autoscale"
+
+# Cluster Management Commands
+alias k8scert="kubectl certificate"
+alias k8scinfo="kubectl cluster-info"
+alias k8stop="kubectl top"
+alias k8scordon="kubectl cordon"
+alias k8suncordon="kubectl uncordon"
+alias k8sdrain="kubectl drain"
+alias k8straint="kubectl traint"
+
+# Troubleshooting and Debugging Commands:
+
+alias k8slogs="kubectl logs"
+alias k8scp="kubectl cp"
+alias k8sexec="kubectl exec"
+
+alias k8spods="kubectl get pods"
+alias k8ssvcs="kubectl get services"
+
+alias k8sport="kubectl port-forward"
+alias k8scfg="kubectl config"
+alias k8sctxs="kubectl config get-contexts"
+alias k8sctx="kubectl config use-context"
+alias k8scdesc="kubectl descirbe"
+alias k8sauth="kubectl auth"
+
+# Advanced Commands
+alias k8sdiff="kubectl diff"
+alias k8sapply="kubectl apply"
