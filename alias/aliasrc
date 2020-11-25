@@ -41,7 +41,7 @@ alias k8sport="kubectl port-forward"
 alias k8scfg="kubectl config"
 alias k8sctxs="kubectl config get-contexts"
 alias k8sctx="kubectl config use-context"
-alias k8scdesc="kubectl descirbe"
+alias k8sdesc="kubectl describe"
 alias k8sauth="kubectl auth"
 
 # Advanced Commands
