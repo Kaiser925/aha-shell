@@ -1,6 +1,7 @@
 # alias  for kubectl
 
 # Basic commands
+alias k8s="kubectl"
 alias k8screate="kubectl create" 
 alias k8sexpose="kubectl expose"
 
@@ -36,6 +37,7 @@ alias k8sexec="kubectl exec"
 
 alias k8spods="kubectl get pods"
 alias k8ssvcs="kubectl get services"
+alias k8snss="kubectl get namespaces"
 
 alias k8sport="kubectl port-forward"
 alias k8scfg="kubectl config"
@@ -47,3 +49,15 @@ alias k8sauth="kubectl auth"
 # Advanced Commands
 alias k8sdiff="kubectl diff"
 alias k8sapply="kubectl apply"
+
+
+
+## Alias for docker
+
+alias drps="docker ps"
+alias drimg="docker images"
+alias drrun="docker run"
+alias drcs="docker-compose"
+alias drlogs="docker logs"
+alias drexec="docker exec"
+alias dr="docker"
