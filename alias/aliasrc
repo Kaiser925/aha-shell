@@ -54,10 +54,10 @@ alias k8sapply="kubectl apply"
 
 ## Alias for docker
 
-alias drps="docker ps"
-alias drimg="docker images"
-alias drrun="docker run"
-alias drcs="docker-compose"
-alias drlogs="docker logs"
-alias drexec="docker exec"
-alias dr="docker"
+alias dkps="docker ps"
+alias dkimg="docker images"
+alias dkrun="docker run"
+alias dkcs="docker-compose"
+alias dklogs="docker logs"
+alias dkexec="docker exec"
+alias dk="docker"
