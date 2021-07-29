@@ -1,7 +1,7 @@
 ## help: Show help message
 .PHONY: help
 help: Makefile
-	@echo "\nUsage: make <TARGETS>  ...\n\nTargets:"
+	@echo "Usage: make <TARGETS>:"
 	@sed -n 's/^##//p' $< | column -t -s ':' | sed -e 's/^/ /'
 
 ## install-go: Install go on local machine
@@ -23,3 +23,8 @@ ubuntu.install-podman:
 .PHONY: password
 password:
 	@./tools/pass-generate
+
+## single-etcd: Run single node etcd
+.PHONY: single-etcd
+single-etcd:
+	@./installer/single-etcd
