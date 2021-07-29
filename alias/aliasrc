@@ -2,7 +2,7 @@
 
 # Basic commands
 alias k8s="kubectl"
-alias k8screate="kubectl create" 
+alias k8screate="kubectl create"
 alias k8sexpose="kubectl expose"
 
 # Service
@@ -50,14 +50,17 @@ alias k8sauth="kubectl auth"
 alias k8sdiff="kubectl diff"
 alias k8sapply="kubectl apply"
 
-
-
 ## Alias for docker
 
 alias dkps="docker ps"
-alias dkimg="docker images"
+alias dkimg="docker image"
 alias dkrun="docker run"
 alias dkcs="docker-compose"
 alias dklogs="docker logs"
 alias dkexec="docker exec"
+alias dkcr="docker container"
+alias dkrmc="docker container rm"
+alias dkrmi="docker rmi"
 alias dk="docker"
+
+alias show-ip="ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p'"
